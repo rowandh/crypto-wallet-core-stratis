@@ -11,7 +11,7 @@ var derivers = {
     BCH: new bch_1.BchDeriver(),
     ETH: new eth_1.EthDeriver(),
     XRP: new xrp_1.XrpDeriver(),
-    STRAT: new strat_1.StratDeriver()
+    STRAX: new strat_1.StratDeriver()
 };
 var DeriverProxy = (function () {
     function DeriverProxy() {
