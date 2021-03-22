@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var BN = require("bn.js");
 var web3_utils_1 = __importDefault(require("web3-utils"));
 var BitcoreLib = require('bitcore-lib');
 var EthDeriver = (function () {
@@ -29,7 +30,7 @@ var EthDeriver = (function () {
         var x = ecPoint.getX().toBuffer({ size: 32 });
         var y = ecPoint.getY().toBuffer({ size: 32 });
         var paddedBuffer = Buffer.concat([x, y]);
-        var address = web3_utils_1.default.keccak256(paddedBuffer).slice(26);
+        var address = web3_utils_1.default.keccak256(new BN(paddedBuffer)).slice(26);
         return web3_utils_1.default.toChecksumAddress(address);
     };
     EthDeriver.prototype.derivePrivateKey = function (network, xPriv, addressIndex, isChange) {

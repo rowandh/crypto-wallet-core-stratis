@@ -1,6 +1,7 @@
 import Web3 from 'web3';
 import { ETHTxProvider } from '../eth';
 import { ERC20Abi } from './abi';
+
 export class ERC20TxProvider extends ETHTxProvider {
   getERC20Contract(tokenContractAddress: string) {
     const web3 = new Web3();
