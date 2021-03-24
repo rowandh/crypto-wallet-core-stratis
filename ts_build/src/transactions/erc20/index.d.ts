@@ -1,6 +1,6 @@
 import { ETHTxProvider } from '../eth';
 export declare class ERC20TxProvider extends ETHTxProvider {
-    getERC20Contract(tokenContractAddress: string): import("web3/eth/contract").default;
+    getERC20Contract(tokenContractAddress: string): import("web3-eth-contract").Contract;
     create(params: {
         recipients: Array<{
             address: string;
@@ -20,6 +20,6 @@ export declare class ERC20TxProvider extends ETHTxProvider {
             amount: string;
         }>;
         tokenAddress: string;
-    }): string;
+    }): any;
 }
 //# sourceMappingURL=index.d.ts.map
